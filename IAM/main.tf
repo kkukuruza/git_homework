@@ -81,13 +81,13 @@ resource "aws_iam_group_membership" "admin_users" {
 resource "aws_iam_group_policy" "dev_policy" {
   name   = "dev_policy"
   group  = aws_iam_group.dev_users.name
-  policy = file("devs_policy.json")
+  policy = file("policy/devs_policy.json")
 }
 
 resource "aws_iam_group_policy" "ops_policy" {
   name   = "ops_policy"
   group  = aws_iam_group.ops_users.name
-  policy = file("ops_policy.json")
+  policy = file("policy/ops_policy.json")
 }
 
 resource "aws_iam_group_policy_attachment" "managed_ops_policy" {
@@ -108,13 +108,13 @@ resource "aws_iam_group_policy_attachment" "managed_monitoring_policy_2" {
 resource "aws_iam_group_policy" "data_policy" {
   name   = "data_policy"
   group  = aws_iam_group.data_users.name
-  policy = file("data_policy.json")
+  policy = file("policy/data_policy.json")
 }
 
 resource "aws_iam_group_policy" "admin_policy" {
   name   = "admin_policy"
   group  = aws_iam_group.admin_users.name
-  policy = file("admin_policy.json")
+  policy = file("policy/admin_policy.json")
 }
 
 #User login profile
